@@ -7,18 +7,28 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key); 
  
   @override 
-  Widget build(BuildContext context) { 
-    const appTitle = 'Form Styling Demo'; 
-    return MaterialApp( 
-      title: appTitle, 
-      home: Scaffold( 
-        appBar: AppBar( 
-          title: const Text(appTitle), 
-        ), 
-        body: const MyCustomForm(), 
-      ), 
-    ); 
-  } 
+  Widget build(BuildContext context) {
+    const appTitle = 'Form Styling Demo';
+    return MaterialApp(
+      title: appTitle,
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
+              ],
+            ),
+          ),
+          body: const MyCustomForm(),
+        ),
+      ),
+    );
+  }
+
 } 
  
 class MyCustomForm extends StatelessWidget { 
