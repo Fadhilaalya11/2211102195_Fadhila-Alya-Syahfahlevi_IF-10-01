@@ -9,10 +9,12 @@ android {
     namespace = "com.example.modul7_2211102195_fadhila_alya_syahfahlevi_01"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true  // Tambahkan baris inis
     }
 
     kotlinOptions {
@@ -41,4 +43,9 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.9.0") // Pastikan core-ktx ada
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.3") // Fix untuk desugaring
 }
